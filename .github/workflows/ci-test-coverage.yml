@@ -10,6 +10,10 @@ jobs:
         python-version: [3.7, 3.8]
 
     steps:
+    - name: Debugging
+      run: |
+        cat /etc/apt/sources.list
+        find /etc/apt/sources.list.d/ -type f -exec echo ----------------{} \; -exec cat {} \;
     - name: Install system dependencies
       run: |
         sudo apt-get update
